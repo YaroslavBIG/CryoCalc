@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calc</title>
+</head>
+
+<body>
+    <form action="">
+        <div class="radio">
+            <span>Пол</span>
+            <label>
+                <input type="radio" name="sex" value="man">мужской
+            </label>
+            <label>
+                <input type="radio" name="sex" value="woman">женский
+            </label>
+        </div>
+        <div class="input">
+            <span>Возраст</span>
+            <label>
+                <input type="number" name="age" style="width: 120px;" maxlength="3" id="age" class="textfield"> лет
+            </label>
+        </div>
+        <div class="input">
+            <span>Вес</span>
+            <label>
+                <input type="number" name="weight" style="width: 120px;" maxlength="3" id="weight"
+                    class="textfield">&nbsp;кг
+            </label>
+        </div>
+        <div class="input">
+            <span></span>
+            <label for="height">Рост</label>
+                <input type="number" name="height" style="width: 120px;" maxlength="3" id="height"
+                    class="textfield">&nbsp;см
+            
+        </div>
+        <div>
+            <label for="activity">Активность</label>
+            <select name="activity">
+                <option value="1.2" alltext="">минимальная активность: минимальная активность, сидячая работа, не требующая значительных физических нагрузок</option>
+                <option value="1.375">слабый уровень активности</option>
+                <option value="1.55">умеренный уровень активности</option>
+                <option value="1.7">тяжелая или трудоемкая активность</option>
+                <option value="1.9">экстремальный уровень</option>
+            </select>
+        </div>
+        <input type="button" value="calculate">
+    </form>
+    <style src="./script.js"></style>
+</body>
+
+</html>
