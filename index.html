@@ -9,49 +9,98 @@
 </head>
 
 <body>
-    <form action="">
-        <div class="radio">
-            <span>Пол</span>
-            <label>
-                <input type="radio" name="sex" value="man">мужской
-            </label>
-            <label>
-                <input type="radio" name="sex" value="woman">женский
-            </label>
-        </div>
-        <div class="input">
-            <span>Возраст</span>
-            <label>
-                <input type="number" name="age" style="width: 120px;" maxlength="3" id="age" class="textfield"> лет
-            </label>
-        </div>
-        <div class="input">
-            <span>Вес</span>
-            <label>
-                <input type="number" name="weight" style="width: 120px;" maxlength="3" id="weight"
-                    class="textfield">&nbsp;кг
-            </label>
-        </div>
-        <div class="input">
-            <span></span>
-            <label for="height">Рост</label>
-                <input type="number" name="height" style="width: 120px;" maxlength="3" id="height"
-                    class="textfield">&nbsp;см
-            
-        </div>
-        <div>
-            <label for="activity">Активность</label>
-            <select name="activity">
-                <option value="1.2" alltext="">минимальная активность: минимальная активность, сидячая работа, не требующая значительных физических нагрузок</option>
-                <option value="1.375">слабый уровень активности</option>
-                <option value="1.55">умеренный уровень активности</option>
-                <option value="1.7">тяжелая или трудоемкая активность</option>
-                <option value="1.9">экстремальный уровень</option>
-            </select>
-        </div>
-        <input type="button" value="calculate">
-    </form>
-    <style src="./script.js"></style>
+    <div class="calc">
+        <form name="calc">
+            <div class="radio">
+                <span>Пол</span>
+                <label>
+                    <input type="radio" name="sex" value="man">мужской
+                </label>
+                <label>
+                    <input type="radio" name="sex" value="woman">женский
+                </label>
+            </div>
+            <div class="input">
+                <span>Возраст</span>
+                <label>
+                    <input type="number" name="age" style="width: 120px;" maxlength="3" id="age" class="textfield"> лет
+                </label>
+            </div>
+            <div class="input">
+                <span>Вес</span>
+                <label>
+                    <input type="number" name="weight" style="width: 120px;" maxlength="3" id="weight"
+                        class="textfield">&nbsp;кг
+                </label>
+            </div>
+            <div class="input">
+                <span>Рост</span>
+                <label>
+                    <input type="number" name="height" style="width: 120px;" maxlength="3" id="height"
+                        class="textfield">&nbsp;см
+                </label>
+            </div>
+            <div>
+                <label for="activity">Активность</label>
+                <select name="activity">
+                    <option value="1.2">минимальная активность</option>
+                    <option value="1.375">слабый уровень активности</option>
+                    <option value="1.55">умеренный уровень активности</option>
+                    <option value="1.7">тяжелая или трудоемкая активность</option>
+                    <option value="1.9">экстремальный уровень</option>
+                </select>
+            </div>
+            <input type="submit" value="calculate" id="calculate">
+        </form>
+    </div>
+    <div class="result_container">
+        <table>
+            <caption>Расчётная калорийность для вас - поддержание веса</caption>
+            <tr>
+                <td class="result_mif">Число</td>
+                <td>Формула Миффлина-Сан Жеора для расчета суточной нормы калорий</td>
+            </tr>
+            <tr>
+                <td class="result_devin">Число</td>
+                <td>Формула Девина для расчета идеального веса</td>
+            </tr>
+            <tr>
+                <td class="result_harris">Число</td>
+                <td>Формула Харриса-Бенедикта для расчета суточной нормы калорий</td>
+            </tr>
+            <tr>
+                <td class="result_who">Число</td>
+                <td>Рекомендации ВОЗ</td>
+            </tr>
+        </table>
+        <table>
+            <caption>Расчётная калорийность для вас - похудение</caption>
+            <tr>
+                <td class="result_mif--losing">Число</td>
+                <td>Формула Миффлина-Сан Жеора для расчета суточной нормы калорий</td>
+            </tr>
+            <tr>
+                <td class="result_devin--losing">Число</td>
+                <td>Формула Девина для расчета идеального веса</td>
+            </tr>
+            <tr>
+                <td class="result_harris--losing">Число</td>
+                <td>Формула Харриса-Бенедикта для расчета суточной нормы калорий</td>
+            </tr>
+            <tr>
+                <td class="result_who--losing">Число</td>
+                <td>Рекомендации ВОЗ</td>
+            </tr>
+        </table>
+        <table>
+            <caption>Примерное суточное потребление воды</caption>
+            <tr>
+                <td class="water">Число</td>
+                <td>потребление воды (л)</td>
+            </tr>
+        </table>
+    </div>
+    <script src="./script.js"></script>
 </body>
 
 </html>
