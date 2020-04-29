@@ -1,0 +1,40 @@
+* {box-sizing: border-box;}
+
+input,
+select {
+    margin-bottom: 10px;
+}
+
+table {
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+td {
+
+}
+
+caption {
+    font-size: 125%;
+}
+
+.calc {
+     min-width: 320px;
+    max-width: 730px;
+    display: flex;
+    justify-content: center;
+}
+
+.cont_calc {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.result_container {
+    min-width: 320px;
+    max-width: 730px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
