@@ -16,29 +16,31 @@
                     <span>Пол</span>
                     <label>
                         <input type="radio" name="sex" value="1">мужской
+                        <span></span>
                     </label>
                     <label>
                         <input type="radio" name="sex" value="2">женский
+                        <span></span>
                     </label>
                 </div>
                 <div class="input">
                     <span>Возраст</span>
                     <label>
-                        <input type="number" name="age" style="width: 120px;" maxlength="3" id="age" class="textfield"
+                        <input type="number" name="age" maxlength="3" id="age" class="textfield"
                             required> лет
                     </label>
                 </div>
                 <div class="input">
                     <span>Вес</span>
                     <label>
-                        <input type="number" name="weight" style="width: 120px;" maxlength="3" id="weight"
+                        <input type="number" name="weight" maxlength="3" id="weight"
                             class="textfield" required>&nbsp;кг
                     </label>
                 </div>
                 <div class="input">
                     <span>Рост</span>
                     <label>
-                        <input type="number" name="height" style="width: 120px;" maxlength="3" id="height"
+                        <input type="number" name="height" maxlength="3" id="height"
                             class="textfield" required>&nbsp;см
                     </label>
                 </div>
@@ -52,8 +54,11 @@
                         <option value="1.9">экстремальный уровень</option>
                     </select>
                 </div>
-                <input type="submit" value="calculate" id="calculate">
+                <input type="submit" value="Рассчитать" id="calculate" class="button__calc button__calc--shine">
             </form>
+        </div>
+        <div class="separator">
+            <img alt="diet" src="images/heading-dark.png">
         </div>
         <div class="result_container">
             <table>
