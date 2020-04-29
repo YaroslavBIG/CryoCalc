@@ -51,7 +51,7 @@ const calculate = (arr) => {
   
   const man = (func) => {
     if (func === 'mif') {
-      const manResult = (10 * weight + 6.25 * height - 5 * age + 5);
+      const manResult = (10 * weight + 6.25 * height - 5 * age + 5) * activity;
       return manResult;
     }
     if(func === 'dev') {
@@ -89,7 +89,7 @@ const calculate = (arr) => {
 
   const woman = (func) => {
     if (func === 'mif') {
-      const womanResult = ((10 * weight) + (6.25 * height) - (5 * age - 161)) * activity;
+      const womanResult = (10 * weight + 6.25 * height - 5 * age - 161) * activity;
       return womanResult;
     }
     if(func === 'dev') {
@@ -102,22 +102,22 @@ const calculate = (arr) => {
     }
        
     if(func === 'calor') {
-      let calor = NaN;
-      switch(age) {
+      
+      switch(true) {
         case (age >= 18 && age <= 30) : {
-          calor = (0.0621 * weight + 2.0357) * 240;
+         return (0.0621 * weight + 2.0357) * 240;
           break;
         }
         case (age >= 31 & age <= 60) : {
-          calor = (0.0342 * weight + 3.5377) * 240;
+         return (0.0342 * weight + 3.5377) * 240;
           break;
         }
         case (age > 60): {
-          calor = (0.0377 * weight + 2.7546) * 240;
+         return (0.0377 * weight + 2.7546) * 240;
           break;
         }
         default: {
-          calor = 'Не допустимый возраст';
+         return 'Не допустимый возраст';
           break;
         }
       }
@@ -167,7 +167,7 @@ const bmiText = () => {
   }
 }
    // Мифф
-   const miff = sex === 1 ? man('mif') : woman('mif');
+   const miff = (sex === 1 ? man('mif') : woman('mif')).toFixed(2);
  
 
    // Devine
@@ -197,7 +197,7 @@ const bmiText = () => {
     mif.innerText = miff;
 
     const devin = container.querySelector('.result_devin');
-    devin.innerText = devine;
+    devin.innerText = devine.toFixed(2);
 
     const haris = container.querySelector('.result_harris');
     haris.innerText = harris;
