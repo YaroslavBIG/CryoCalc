@@ -209,56 +209,7 @@ const bmiText = () => {
     const calorWhoLos = container.querySelector('.result_who--losing');
     calorWhoLos.innerText = (Number(who) * 0.8).toFixed(2);
 
-    // const waterX = container.querySelector('.result_who--losing');
-    // waterX.innerText = water;
-
-
   }
 
   addToTable();
-//  div class="result_container">
-//         <table>
-//             <caption>Расчётная калорийность для вас - поддержание веса</caption>
-//             <tr>
-//                 <td class="result_mif">Число</td>
-//                 <td>Формула Миффлина-Сан Жеора для расчета суточной нормы калорий</td>
-//             </tr>
-//             <tr>
-//                 <td class="result_devin">Число</td>
-//                 <td>Формула Девина для расчета идеального веса</td>
-//             </tr>
-//             <tr>
-//                 <td class="result_harris">Число</td>
-//                 <td>Формула Харриса-Бенедикта для расчета суточной нормы калорий</td>
-//             </tr>
-//             <tr>
-//                 <td class="result_who">Число</td>
-//                 <td>Рекомендации ВОЗ</td>
-//             </tr>
-//         </table>
-//         <table>
-//             <caption>Расчётная калорийность для вас - похудение</caption>
-//             <tr>
-//                 <td class="result_mif--losing">Число</td>
-//                 <td>Формула Миффлина-Сан Жеора для расчета суточной нормы калорий</td>
-//             </tr>
-//             <tr>
-//                 <td class="result_devin--losing">Число</td>
-//                 <td>Формула Девина для расчета идеального веса</td>
-//             </tr>
-//             <tr>
-//                 <td class="result_harris--losing">Число</td>
-//                 <td>Формула Харриса-Бенедикта для расчета суточной нормы калорий</td>
-//             </tr>
-//             <tr>
-//                 <td class="result_who--losing">Число</td>
-//                 <td>Рекомендации ВОЗ</td>
-//             </tr>
-//         </table>
-//         <table>
-//             <caption>Примерное суточное потребление воды</caption>
-//             <tr>
-//                 <td class="water">Число</td>
-//                 <td>потребление воды (л)</td>
-//             </tr>
 }
