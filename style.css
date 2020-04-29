@@ -23,6 +23,7 @@ caption {
     max-width: 730px;
     display: flex;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .cont_calc {
@@ -35,6 +36,7 @@ caption {
     min-width: 320px;
     max-width: 730px;
     display: flex;
-    flex-flow: wrap;
+    flex-flow: column;
     justify-content: center;
+    margin: 0 auto;
 }

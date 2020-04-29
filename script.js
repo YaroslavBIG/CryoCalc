@@ -10,10 +10,10 @@ const formReq = () => {
   }
 
   const form = document.forms.calc;
-  const sex = form.elements.sex.value
-  const age = form.elements.age.value
-  const weight = form.elements.weight.value
-  const height = form.elements.height.value
+  const sex = parseInt(form.elements.sex.value, 10)
+  const age = parseInt(form.elements.age.value, 10)
+  const weight = parseInt(form.elements.weight.value, 10)
+  const height = parseInt(form.elements.height.value, 10)
   const activity = form.elements.activity.value
   const formArr = [sex, age, weight, height, activity]
 
@@ -31,7 +31,7 @@ const formReq = () => {
   }
 
   if (height < 140 || height > 240) {
-    return error('Для верного расчёта необходимы значения роста от 140 до 240 кг')
+    return error('Для верного расчёта необходимы значения роста от 140 до 240 см')
   } else {
     return calculate(formArr);
   }
@@ -51,25 +51,25 @@ const calculate = (arr) => {
   
   const man = (func) => {
     if (func === 'mif') {
-      const manResult = ((10 * weight) + (6.25 * height) - (5 * age + 5)) * activity;
+      const manResult = (10 * weight + 6.25 * height - 5 * age + 5);
       return manResult;
     }
     if(func === 'dev') {
-      const devine = (50 + 2.3) * (0.394 * height - 60)
-      return devine;
+      const devine = 50 + (2.3 * (0.394 * height - 60));
+	  return devine;
     }
     if(func === 'har') {
       const haris = (66 + (13.7 * weight) + (5 * height) - (6.76 * age)) * activity
       return haris;
     }
     if(func === 'calor') {
-      const calor = NaN;
+      let calor = NaN;
       switch(age) {
         case (age >= 18 && age <= 30) : {
           calor = (0.0630 * weight + 2.8927) * 240;
           break;
         }
-        case (age >= 31 && age <= 60) : {
+        case (age >= 31 & age <= 60) : {
           calor = (0.0484 * weight + 3.6534) * 240;
           break;
         }
@@ -78,7 +78,7 @@ const calculate = (arr) => {
           break;
         }
         default: {
-          calor = 'Не допустимый возраст';
+          calor = 0;
           break;
         }
       }
@@ -93,7 +93,7 @@ const calculate = (arr) => {
       return womanResult;
     }
     if(func === 'dev') {
-      const devine = (45.5 + 2.3) * (0.394 * height - 60)
+      const devine = 45.5 + (2.3 * (0.394 * height - 60))
       return devine;
     }
     if(func === 'har') {
@@ -108,7 +108,7 @@ const calculate = (arr) => {
           calor = (0.0621 * weight + 2.0357) * 240;
           break;
         }
-        case (age >= 31 && age <= 60) : {
+        case (age >= 31 & age <= 60) : {
           calor = (0.0342 * weight + 3.5377) * 240;
           break;
         }
@@ -128,44 +128,44 @@ const calculate = (arr) => {
  
   // Имт
   const heightMet = height / 100;
-  const bmi = weight / (heightMet * heightMet);
-  let bmiText = '';
-
-  switch (bmi) {
-    case (bmi >= 0 && bmi < 16): {
-      bmiText = 'Выраженный дефицит массы тела'
+  const bmi = +((weight / (heightMet ** 2)).toFixed(2));
+  //let bmiText = '';
+const bmiText = () => {
+  switch (true) {
+    case (bmi >= 0 && bmi < 16): 
+      return 'Выраженный дефицит массы тела'
       break;
-    }
-    case (bmi >= 16 && bmi < 18.5): {
-      bmiText = 'Недостаточная (дефицит) масса тела'
+    
+    case (bmi >= 16 && bmi < 18.5): 
+      return 'Недостаточная (дефицит) масса тела'
       break;
-    }
-    case (bmi >= 18.5 && bmi <= 24.99): {
-      bmiText = 'Нормальная масса тела'
+    
+    case (bmi >= 18.5 && bmi <= 24.99): 
+      return 'Нормальная масса тела'
       break;
-    }
-    case (bmi >= 25 && bmi < 30): {
-      bmiText = 'Избыточная масса тела (предожирение)'
+    
+    case (bmi >= 25 && bmi < 30): 
+      return 'Избыточная масса тела (предожирение)'
       break;
-    }
-    case (bmi >= 30 && bmi < 35): {
-      bmiText = 'Ожирение'
+    
+    case (bmi >= 30 && bmi < 35): 
+      return 'Ожирение'
       break;
-    }
-    case (bmi >= 35 && bmi <= 40): {
-      bmiText = 'Ожирение резкое'
+    
+    case (bmi >= 35 && bmi <= 40): 
+      return 'Ожирение резкое'
       break;
-    }
-    case (bmi > 40): {
-      bmiText = 'Ожирение очень резкое'
+    
+    case (bmi > 40): 
+      return 'Ожирение очень резкое'
       break;
-    }
-    default: {
-      bmiText = 'Ошибка расчёта, проверьте введённые данные'
+    
+    default: 
+      return 'Ошибка расчёта, проверьте введённые данные'
       break;
-    }
+    
   }
-
+}
    // Мифф
    const miff = sex === 1 ? man('mif') : woman('mif');
  
@@ -189,6 +189,9 @@ const calculate = (arr) => {
 
   const addToTable = () => {
     const container = document.querySelector('.result_container');
+
+    const bmiTable = document.querySelector('.bmi_text');
+    bmiTable.innerText = `${bmi} ${bmiText()}`;
     
     const mif = container.querySelector('.result_mif');
     mif.innerText = miff;
