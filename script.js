@@ -209,13 +209,13 @@ const bmiText = () => {
     waterReq.innerText = water;
 
     const mifLos = container.querySelector('.result_mif--losing');
-    mifLos.innerText = miff * 0.8;
+    mifLos.innerText = (miff * 0.8).toFixed(2);
 
     const harisLos = container.querySelector('.result_harris--losing');
-    harisLos.innerText = harris * 0.8;
+    harisLos.innerText = (harris * 0.8).toFixed(2);
 
     const calorWhoLos = container.querySelector('.result_who--losing');
-    calorWhoLos.innerText = who * 0.8;
+    calorWhoLos.innerText = (who * 0.8).toFixed(2);
 
     const waterX = container.querySelector('.result_who--losing');
     waterX.innerText = water;
