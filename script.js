@@ -62,27 +62,23 @@ const calculate = (arr) => {
       const haris = (66 + (13.7 * weight) + (5 * height) - (6.76 * age)) * activity
       return haris;
     }
+
     if(func === 'calor') {
-      let calor = NaN;
-      switch(age) {
-        case (age >= 18 && age <= 30) : {
-          calor = (0.0630 * weight + 2.8927) * 240;
-          break;
-        }
-        case (age >= 31 & age <= 60) : {
-          calor = (0.0484 * weight + 3.6534) * 240;
-          break;
-        }
-        case (age > 60): {
-          calor = (0.0491 * weight + 2.4587) * 240;
-          break;
-        }
-        default: {
-          calor = 0;
-          break;
-        }
+     
+      switch(true) {
+        case age >= 18 && age <= 30:
+          return (0.0630 * weight + 2.8927) * 240;
+        
+        case age >= 31 && age <= 60:
+          return (0.0484 * weight + 3.6534) * 240;
+        
+        case age > 60:
+          return (0.0491 * weight + 2.4587) * 240;
+        
+        default:
+          return 0;
+        
       }
-      return calor;
     }
 
   }
@@ -104,22 +100,18 @@ const calculate = (arr) => {
     if(func === 'calor') {
       
       switch(true) {
-        case (age >= 18 && age <= 30) : {
+        case age >= 18 && age <= 30: 
          return (0.0621 * weight + 2.0357) * 240;
-          break;
-        }
-        case (age >= 31 & age <= 60) : {
+
+         case age >= 31 && age <= 60: 
          return (0.0342 * weight + 3.5377) * 240;
-          break;
-        }
-        case (age > 60): {
+
+         case age > 60: 
          return (0.0377 * weight + 2.7546) * 240;
-          break;
-        }
-        default: {
+
+         default: 
          return 'Не допустимый возраст';
-          break;
-        }
+          
       }
       return calor;
     }
@@ -180,7 +172,7 @@ const bmiText = () => {
  
    // Сalories
  
-   const who = sex === 1 ? man('calor') : woman('calor');
+   const who = (sex === 1 ? man('calor') : woman('calor')).toFixed(2);
    
    // Water
    
@@ -215,10 +207,10 @@ const bmiText = () => {
     harisLos.innerText = (harris * 0.8).toFixed(2);
 
     const calorWhoLos = container.querySelector('.result_who--losing');
-    calorWhoLos.innerText = (who * 0.8).toFixed(2);
+    calorWhoLos.innerText = (Number(who) * 0.8).toFixed(2);
 
-    const waterX = container.querySelector('.result_who--losing');
-    waterX.innerText = water;
+    // const waterX = container.querySelector('.result_who--losing');
+    // waterX.innerText = water;
 
 
   }
