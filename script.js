@@ -5,7 +5,6 @@ const subm = (ev) => {
 
 const formReq = () => {
   function error(mesage, field = '') {
-    console.log(mesage, field) // Сделать модалку?
     alert(mesage, field)
   }
 
@@ -176,10 +175,8 @@ const bmiText = () => {
    
    // Water
    
-   const water = sex === 1 ? weight * 0.04 : weight * 0.03; 
-    console.log(weight)
-    console.log(water)
-
+   const water = (sex === 1 ? weight * 0.04 : weight * 0.03).toFixed(2); 
+  
   const addToTable = () => {
     const container = document.querySelector('.result_container');
 

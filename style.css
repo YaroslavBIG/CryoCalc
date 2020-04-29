@@ -4,6 +4,11 @@ input,
 select {
     margin-bottom: 10px;
     border-radius: 5px;
+    padding-left: 3px;
+}
+
+input::placeholder {
+    padding-left: 3px;
 }
 
 table {
