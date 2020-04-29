@@ -14,35 +14,36 @@
             <div class="radio">
                 <span>Пол</span>
                 <label>
-                    <input type="radio" name="sex" value="man">мужской
+                    <input type="radio" name="sex" value="1">мужской
                 </label>
                 <label>
-                    <input type="radio" name="sex" value="woman">женский
+                    <input type="radio" name="sex" value="2">женский
                 </label>
             </div>
             <div class="input">
                 <span>Возраст</span>
                 <label>
-                    <input type="number" name="age" style="width: 120px;" maxlength="3" id="age" class="textfield"> лет
+                    <input type="number" name="age" style="width: 120px;" maxlength="3" id="age" class="textfield"
+                        required> лет
                 </label>
             </div>
             <div class="input">
                 <span>Вес</span>
                 <label>
-                    <input type="number" name="weight" style="width: 120px;" maxlength="3" id="weight"
-                        class="textfield">&nbsp;кг
+                    <input type="number" name="weight" style="width: 120px;" maxlength="3" id="weight" class="textfield"
+                        required>&nbsp;кг
                 </label>
             </div>
             <div class="input">
                 <span>Рост</span>
                 <label>
-                    <input type="number" name="height" style="width: 120px;" maxlength="3" id="height"
-                        class="textfield">&nbsp;см
+                    <input type="number" name="height" style="width: 120px;" maxlength="3" id="height" class="textfield"
+                        required>&nbsp;см
                 </label>
             </div>
             <div>
                 <label for="activity">Активность</label>
-                <select name="activity">
+                <select name="activity" required>
                     <option value="1.2">минимальная активность</option>
                     <option value="1.375">слабый уровень активности</option>
                     <option value="1.55">умеренный уровень активности</option>
