@@ -211,9 +211,6 @@ const bmiText = () => {
     const mifLos = container.querySelector('.result_mif--losing');
     mifLos.innerText = miff * 0.8;
 
-    const devinLos = container.querySelector('.result_devin--losing');
-    devinLos.innerText = devine * 0.8;
-
     const harisLos = container.querySelector('.result_harris--losing');
     harisLos.innerText = harris * 0.8;
 
