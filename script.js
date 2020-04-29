@@ -168,7 +168,7 @@ const bmiText = () => {
 
    // Haris 
  
-   const harris = sex === 1 ? man('har') : woman('har');
+   const harris = (sex === 1 ? man('har') : woman('har')).toFixed(2);
  
    // Сalories
  
@@ -177,7 +177,8 @@ const bmiText = () => {
    // Water
    
    const water = sex === 1 ? weight * 0.04 : weight * 0.03; 
-
+    console.log(weight)
+    console.log(water)
 
   const addToTable = () => {
     const container = document.querySelector('.result_container');
